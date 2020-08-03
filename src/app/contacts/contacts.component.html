@@ -1,0 +1,52 @@
+<br>
+<section id="sec" class="container">
+    <br><div id="heading"> <span class="glyphicon glyphicon-user"></span> &nbsp; Phone Book App</div> <br>
+<input  id="txt" type="search"  placeholder= "Search for contact" (input) = search(text.value)   #text>&nbsp;
+<button  class="btn btn-primary" (click)= "AddContact()">+Add Contact</button> 
+<section  [class]="hiddenstatus" id="AddContact">
+    <br>
+    <label for="name"> Name </label>
+    <input type="text" id="name" [value]="nametext" #name> &nbsp;
+    <label for="number"> Number </label>
+    <input type="text" id="number" [value]=numbertext #number> &nbsp;
+    <button class="btn btn-primary" (click) = "Add(name.value,number.value)"> Add</button>
+</section>
+    
+   <div id="sec1">
+    <br>
+        <ng-template [ngIf] = "searched.length ==0">
+            <!-- <p>no elements in searched array</p> -->
+           
+            <table class="datatable">
+                <tr *ngFor = "let c of sorted" class="panel panel-default">
+                    
+                    <td >
+                      <p id="name"> <b>{{c.name}}</b> </p>
+                      <p id="number"> <span class="glyphicon glyphicon-earphone"></span> {{c.number}}</p>
+                   </td> &nbsp; &nbsp;
+                    <td> <span  class = "glyphicon glyphicon-trash" id="delbtn" (click) = "delete(c)"></span></td>
+      
+                </tr>
+            </table>
+        </ng-template>
+        <ng-template [ngIf] = "searched.length > 0">
+            <!-- <p>There are elements in searched array</p> -->
+            <table class="datatable">
+                <!-- {{searched|json}} -->
+                <tr *ngFor = "let c of searched" class="panel panel-default">
+                    
+                    <td >
+                      <p id="name"> <b>{{c.name}}</b> </p>
+                      <p id="number"> <span class="glyphicon glyphicon-earphone"></span> {{c.number}}</p>
+                   </td> &nbsp; &nbsp;
+                    <td> <span  class = "glyphicon glyphicon-trash" id="delbtn" (click) = "alert()"></span></td> 
+                </tr>
+            </table>
+        </ng-template>
+    </div>
+
+        <br><br><br>
+    
+</section>
+
+

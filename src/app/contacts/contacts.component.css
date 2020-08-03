@@ -1,0 +1,39 @@
+
+.datatable{
+   width: 100%;
+    }
+    #heading{
+        text-align: center;
+        font-weight: bolder;
+    }
+    #sec{
+        width: 600px;
+        background-color: lightgray;
+    }
+    #sec1{
+        align-items: center;
+    }
+    #delbtn{
+        color: red;
+    }
+    #main{
+        text-align: center;
+    }
+    
+    #id {
+        font-size: large;
+    }
+    #number{
+        font-size: small;
+        color: gray ;
+    }
+    #txt{
+        width: 450px;
+        background-color: lightgray;
+        
+    }
+    /* #addbtn{
+        background-color: rgb(42, 144, 240);
+        color:white ;
+    } */
+   
